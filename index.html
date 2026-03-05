@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capilla San Francisco de Asís | Ituzaingó</title>
+  <meta name="description" content="Capilla San Francisco de Asís en Ituzaingó. Horarios de misa, Año Jubilar Franciscano, lecturas del día, audio del Evangelio, Facebook y publicaciones de la comunidad.">
+  <meta property="og:title" content="Capilla San Francisco de Asís">
+  <meta property="og:description" content="Comunidad católica de fe, oración y encuentro en Ituzaingó.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/san_francisco_caricatura.jpg">
+  <style>
+    :root{
+      --bg:#f5efe4;
+      --bg-2:#fffaf2;
+      --card:#ffffff;
+      --ink:#2e241d;
+      --muted:#6f5d50;
+      --line:#ead8bf;
+      --brand:#6b2d17;
+      --brand-2:#aa7633;
+      --brand-3:#325c3e;
+      --shadow:0 22px 46px rgba(42,31,24,.10);
+      --radius:28px;
+      --radius-sm:20px;
+      --max:1220px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      line-height:1.6;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(170,118,51,.10), transparent 27%),
+        radial-gradient(circle at 88% 6%, rgba(50,92,62,.08), transparent 26%),
+        linear-gradient(180deg, #f9f4ec, #f5efe4 34%, #f8f3ea 100%);
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .topbar{
+      position:sticky;top:0;z-index:60;
+      backdrop-filter:blur(12px);
+      background:rgba(255,250,242,.90);
+      border-bottom:1px solid rgba(234,216,191,.85);
+    }
+    .topbar-inner{
+      max-width:var(--max);margin:0 auto;padding:12px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .brand{display:flex;align-items:center;gap:14px;font-weight:800}
+    .brand-badge{
+      width:50px;height:50px;border-radius:18px;display:grid;place-items:center;flex:0 0 auto;
+      color:#fff;font-size:1.25rem;
+      background:linear-gradient(135deg,var(--brand),#a53f1f 58%, #d37a34);
+      box-shadow:var(--shadow);
+    }
+    .brand small{display:block;color:var(--muted);font-size:.84rem;font-weight:700}
+    .nav{display:flex;flex-wrap:wrap;gap:8px}
+    .nav a{
+      text-decoration:none;
+      padding:10px 13px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:.92rem;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .nav a:hover{background:#fff;border-color:var(--line);color:var(--ink)}
+    .hero{padding:34px 0 14px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
+    .card{
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-main{padding:34px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      background:#fff4e8;border:1px solid #f1d7b7;color:var(--brand);
+      font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size:clamp(2.15rem,4.2vw,4.35rem);
+      line-height:1.02;letter-spacing:-.035em;
+    }
+    .lead{margin:0;color:var(--muted);font-size:1.08rem;max-width:70ch}
+    .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 0}
+    .quick .mini{
+      padding:16px;border-radius:22px;background:var(--bg-2);border:1px solid var(--line);
+    }
+    .mini strong{display:block;margin-bottom:4px;color:var(--brand)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      text-decoration:none;
+      padding:13px 18px;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid var(--line);
+      background:#fff;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(42,31,24,.08)}
+    .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+    .btn.secondary{background:#fff6ec}
+    .btn.green{background:var(--brand-3);border-color:var(--brand-3);color:#fff}
+    .btn.gold{background:var(--brand-2);border-color:var(--brand-2);color:#fff}
+    .hero-side{display:grid;grid-template-rows:auto 1fr;gap:14px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,248,239,.96))}
+    .portrait{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#eee}
+    .portrait img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .note{border-radius:24px;padding:20px;background:var(--bg-2);border:1px solid var(--line)}
+    .note h3{margin:0 0 8px;font-size:1.12rem}
+    .note p{margin:0;color:var(--muted)}
+    section{padding:18px 0}
+    .section-head{margin:8px 0 18px;display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+    .section-head h2{margin:0;font-size:clamp(1.65rem,2.7vw,2.7rem);line-height:1.05}
+    .section-head p{margin:0;color:var(--muted);max-width:760px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .pad{padding:24px}
+    .pad h3{margin:0 0 10px}
+    .pad p{margin:0;color:var(--muted)}
+    .soft{background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,250,242,.98))}
+    .feature{position:relative;overflow:hidden}
+    .feature::after{content:"";position:absolute;right:-60px;top:-70px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle, rgba(107,45,23,.09), transparent 64%)}
+    .feature ul{margin:12px 0 0 18px;padding:0;color:var(--muted)}
+    .feature li{margin:7px 0}
+    .media-card{display:flex;flex-direction:column}
+    .media-card img{width:100%;aspect-ratio:16/11;object-fit:cover;background:#eee}
+    .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+    .tag{padding:8px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:.84rem;font-weight:800;color:var(--muted)}
+    .lit-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+    .lit-surface{padding:26px;background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,250,242,.98))}
+    .lit-badge{display:inline-flex;padding:7px 10px;border-radius:999px;background:#f8eee1;color:var(--brand);font-size:.8rem;font-weight:800;margin-bottom:12px}
+    .live-status{font-size:.95rem;color:var(--muted);margin-bottom:16px}
+    .dynamic-panel{border:1px solid var(--line);border-radius:22px;background:#fffdf8;padding:18px}
+    .dynamic-panel + .dynamic-panel{margin-top:14px}
+    .dynamic-panel h3{margin:0 0 8px;font-size:1.18rem;line-height:1.2}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px;color:var(--muted);font-size:.92rem}
+    .meta span{padding:6px 10px;border-radius:999px;background:#f8eee1;border:1px solid #eed7bc}
+    .reading-body{
+      color:var(--ink);
+      white-space:pre-line;
+      max-height:420px;
+      overflow:auto;
+      padding-right:6px;
+    }
+    .extracto{margin-top:14px;padding:16px;border-radius:18px;background:#fff7ea;border:1px dashed #dfc8a7;color:var(--muted)}
+    audio{width:100%;margin-top:14px}
+    .loading{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-weight:700}
+    .spinner{width:16px;height:16px;border-radius:50%;border:2px solid #e4d4bf;border-top-color:var(--brand);animation:spin .9s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .feed-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .gallery{display:grid;grid-template-columns:1.22fr 1fr 1fr;gap:18px}
+    .gallery-item{position:relative;overflow:hidden;border-radius:24px;min-height:250px}
+    .gallery-item img{width:100%;height:100%;object-fit:cover}
+    .gallery-item.large{min-height:560px}
+    .caption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(24,17,12,.72);color:#fff;padding:12px 14px;border-radius:16px;font-size:.92rem}
+    .fb-grid{display:grid;grid-template-columns:1fr .95fr;gap:18px}
+    .fb-box{padding:26px}
+    .fb-box p{margin:0;color:var(--muted)}
+    .fb-frame{min-height:560px;background:#f6f0e6;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+    .fb-frame iframe{width:100%;min-height:560px;border:0}
+    .footer{padding:28px 0 44px;color:var(--muted)}
+    .footer-box{padding:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .footer strong{color:var(--ink)}
+    .tiny{font-size:.9rem}
+    @media (max-width:1020px){
+      .hero-grid,.grid-3,.grid-2,.lit-grid,.gallery,.fb-grid{grid-template-columns:1fr}
+      .quick{grid-template-columns:1fr}
+      .gallery-item.large{min-height:340px}
+      .fb-frame,.fb-frame iframe{min-height:420px}
+    }
+    @media (max-width:760px){
+      .topbar-inner{flex-direction:column;align-items:flex-start}
+      .hero-main,.hero-side,.pad,.lit-surface,.footer-box,.fb-box{padding:18px}
+      .nav a{padding:8px 10px;font-size:.86rem}
+      .reading-body{max-height:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✝</div>
+        <div>
+          Capilla San Francisco de Asís
+          <small>Ituzaingó · Comunidad de fe, oración y encuentro</small>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#jubileo">Jubileo</a>
+        <a href="#palabra">Palabra del día</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#facebook">Facebook</a>
+        <a href="#galeria">Galería</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="inicio">
+      <div class="hero-grid">
+        <article class="card hero-main">
+          <span class="eyebrow">Año Jubilar Franciscano · 2026</span>
+          <h1>Un lugar para rezar, celebrar y peregrinar con espíritu franciscano.</h1>
+          <p class="lead">
+            La <strong>Capilla San Francisco de Asís</strong> recibe a la comunidad para la oración, la Santa Misa,
+            la catequesis y el camino de fe en este tiempo jubilar. Aquí, cada visita quiere ser encuentro,
+            reconciliación, esperanza y vida compartida.
+          </p>
+
+          <div class="quick">
+            <div class="mini">
+              <strong>Santa Misa</strong>
+              Todos los sábados a las 19:00 hs
+            </div>
+            <div class="mini">
+              <strong>Dirección</strong>
+              San Fernando 2271 · Ituzaingó · Buenos Aires
+            </div>
+            <div class="mini">
+              <strong>Contacto</strong>
+              capillasanfranciscoituzaingo@gmail.com
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=San+Fernando+2271,+Ituzaing%C3%B3,+Buenos+Aires" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn green" href="mailto:capillasanfranciscoituzaingo@gmail.com">Escribir por email</a>
+            <a class="btn secondary" href="#facebook">Facebook</a>
+          </div>
+        </article>
+
+        <aside class="card hero-side">
+          <div class="portrait">
+            <img src="assets/san_francisco_caricatura.jpg" alt="Imagen de San Francisco de Asís">
+          </div>
+          <div class="note">
+            <h3>San Francisco, camino de paz y fraternidad</h3>
+            <p>
+              En el octavo centenario del tránsito de San Francisco, la Iglesia invita a volver a la sencillez del Evangelio,
+              al amor por toda criatura y a la alegría humilde de una fe vivida con obras.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Nuestra comunidad</h2>
+        <p>Un espacio abierto para la fe, la escucha de la Palabra y la vida sacramental.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card pad soft">
+          <h3>Oración y celebración</h3>
+          <p>La capilla reúne a familias, jóvenes, niños y adultos para celebrar la Eucaristía, elevar intenciones y caminar juntos en la fe.</p>
+        </article>
+        <article class="card pad soft">
+          <h3>Catequesis</h3>
+          <p>La formación cristiana acompaña el crecimiento espiritual de niños, adolescentes y adultos, con el Evangelio en el centro.</p>
+        </article>
+        <article class="card pad soft">
+          <h3>Peregrinación</h3>
+          <p>En este tiempo jubilar, la visita a la capilla puede vivirse como un paso de conversión, misericordia y esperanza cristiana.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="jubileo">
+      <div class="section-head">
+        <h2>Año Jubilar Franciscano</h2>
+        <p>2026 está marcado por el octavo centenario del tránsito de San Francisco de Asís y por un tiempo especial de gracia para toda la Iglesia.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card pad feature soft">
+          <h3>800 años del tránsito de San Francisco</h3>
+          <p>
+            La familia franciscana vive en 2026 el recuerdo agradecido del <strong>tránsito de San Francisco</strong>,
+            es decir, el paso del santo a la casa del Padre. Esta memoria espiritual fue abierta solemnemente en Asís
+            como un año conmemorativo especial y camino jubilar de toda la familia franciscana.
+          </p>
+          <ul>
+            <li>Invita a renovar la vida en el Evangelio con sencillez y alegría.</li>
+            <li>Llama a la paz, la fraternidad y la reconciliación.</li>
+            <li>Propone peregrinar, orar y vivir obras de misericordia.</li>
+          </ul>
+        </article>
+
+        <article class="card pad soft">
+          <h3>Indulgencia plenaria y peregrinación</h3>
+          <p>
+            En este Año Jubilar, la gracia se extiende también a los fieles que peregrinan a una iglesia o lugar de culto
+            dedicado a san Francisco, viviendo con corazón convertido las disposiciones espirituales indicadas por la Iglesia:
+            reconciliación, oración, comunión y caridad.
+          </p>
+          <p style="margin-top:12px;">
+            La comunidad está invitada a vivir este tiempo como un verdadero camino de renovación interior, paz y encuentro con Dios.
+          </p>
+          <div class="actions" style="margin-top:18px;">
+            <a class="btn gold" href="https://www.vaticannews.va/es/iglesia/news/2026-01/asis-comienzo-celebraciones-octavo-centenario-muerte-san-francis.html" target="_blank" rel="noopener">Año jubilar en Asís</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="palabra">
+      <div class="section-head">
+        <h2>Palabra del día</h2>
+        <p>Esta sección se actualiza automáticamente desde fuentes oficiales externas de Vatican News: lectura del día, extracto y audio del comentario del Evangelio.</p>
+      </div>
+
+      <div class="lit-grid">
+        <article class="card lit-surface">
+          <span class="lit-badge">Lectura diaria</span>
+          <div class="live-status"><span class="loading"><span class="spinner"></span>Actualizando contenido…</span></div>
+          <div class="dynamic-panel">
+            <h3 id="reading-title">Cargando lectura del día…</h3>
+            <div class="meta" id="reading-meta"></div>
+            <div class="reading-body" id="reading-body">En unos segundos se mostrará el texto recibido desde la fuente oficial.</div>
+            <div class="extracto" id="reading-extract">Se preparará aquí un extracto breve para lectura rápida.</div>
+            <div class="feed-links">
+              <a class="btn primary" id="reading-link" href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank" rel="noopener">Abrir en Vatican News</a>
+              <a class="btn secondary" href="https://www.vaticannews.va/es/evangelio-de-hoy.rss.xml" target="_blank" rel="noopener">Fuente RSS</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card lit-surface">
+          <span class="lit-badge">Audio del Evangelio</span>
+          <div class="dynamic-panel">
+            <h3 id="podcast-title">Cargando comentario del Evangelio…</h3>
+            <div class="meta" id="podcast-meta"></div>
+            <p id="podcast-desc">Cuando finalice la carga, aquí aparecerá la descripción del episodio más reciente.</p>
+            <audio id="podcast-audio" controls preload="none" hidden></audio>
+            <div class="feed-links">
+              <a class="btn green" id="podcast-link" href="https://www.vaticannews.va/es/podcast/comentario-del-evangelio.html" target="_blank" rel="noopener">Abrir comentario completo</a>
+              <a class="btn secondary" href="https://www.vaticannews.va/es/podcast/comentario-del-evangelio.podcast.xml" target="_blank" rel="noopener">Podcast RSS</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="publicaciones">
+      <div class="section-head">
+        <h2>Publicaciones y convocatorias</h2>
+        <p>Material visual para la vida de la comunidad y el tiempo jubilar.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card media-card">
+          <img src="assets/catequesis_2026.jpg" alt="Catequesis de iniciación cristiana 2026">
+          <div class="pad">
+            <h3>Catequesis 2026</h3>
+            <p>La convocatoria a la catequesis acompaña a niños, jóvenes, familias y adultos en el camino de la iniciación cristiana y la vida sacramental.</p>
+            <div class="tag-row">
+              <span class="tag">Familias</span>
+              <span class="tag">Formación</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <img src="assets/misa_jubilar_4_marzo.jpg" alt="Santa Misa en honor a San Francisco de Asís">
+          <div class="pad">
+            <h3>Santa Misa en honor a San Francisco</h3>
+            <p>Una celebración especial para compartir la espiritualidad franciscana, la oración comunitaria y la alegría del Año Jubilar.</p>
+            <div class="tag-row">
+              <span class="tag">Jubileo</span>
+              <span class="tag">Peregrinación</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card media-card">
+          <img src="assets/francisco_800_asis.jpg" alt="Octavo centenario del tránsito de San Francisco">
+          <div class="pad">
+            <h3>Octavo centenario franciscano</h3>
+            <p>Una imagen que acompaña el recuerdo del tránsito de San Francisco y el llamado a vivir con humildad, paz y fraternidad.</p>
+            <div class="tag-row">
+              <span class="tag">San Francisco</span>
+              <span class="tag">Año jubilar</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="facebook">
+      <div class="section-head">
+        <h2>Facebook oficial</h2>
+        <p>Seguinos para enterarte de celebraciones, novedades y publicaciones de la comunidad.</p>
+      </div>
+
+      <div class="fb-grid">
+        <article class="card fb-box soft">
+          <h3>Capilla San Francisco de Asís</h3>
+          <p>
+            La página oficial en Facebook reúne avisos, imágenes, convocatorias y contenidos para compartir en la vida diaria de la comunidad.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="https://www.facebook.com/people/Francisco-Capilla-Sfa/pfbid02mchKPSR5dKnLedguYAbx32kf9woMdqyP7ZZcJQktiwMBKzUfB9wQKzVLnkhpKMmCl/" target="_blank" rel="noopener">Abrir Facebook</a>
+          </div>
+          <p class="tiny" style="margin-top:14px;">
+            Si el navegador bloquea la vista embebida, el botón abre la página oficial directamente.
+          </p>
+        </article>
+
+        <div class="card fb-frame">
+          <iframe
+            title="Facebook de la Capilla San Francisco de Asís"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpeople%2FFrancisco-Capilla-Sfa%2Fpfbid02mchKPSR5dKnLedguYAbx32kf9woMdqyP7ZZcJQktiwMBKzUfB9wQKzVLnkhpKMmCl%2F&tabs=timeline&width=500&height=560&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="section-head">
+        <h2>Galería</h2>
+        <p>Imágenes de la capilla y del camino franciscano.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="card gallery-item large" style="margin:0;">
+          <img src="assets/altar_capilla.jpg" alt="Vista del altar de la Capilla San Francisco de Asís">
+          <figcaption class="caption">Vista del altar de la capilla, corazón del encuentro comunitario en la oración y la Eucaristía.</figcaption>
+        </figure>
+        <figure class="card gallery-item" style="margin:0;">
+          <img src="assets/misa_jubilar_4_marzo.jpg" alt="Flyer de la Santa Misa en honor a San Francisco">
+          <figcaption class="caption">Celebración jubilar en honor a San Francisco de Asís.</figcaption>
+        </figure>
+        <figure class="card gallery-item" style="margin:0;">
+          <img src="assets/catequesis_2026.jpg" alt="Flyer de catequesis 2026">
+          <figcaption class="caption">Convocatoria de catequesis para niños, jóvenes y familias.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <div class="card footer-box">
+      <div>
+        <strong>Capilla San Francisco de Asís</strong><br>
+        San Fernando 2271 · Ituzaingó · Buenos Aires
+      </div>
+      <div class="actions" style="margin-top:0;">
+        <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=San+Fernando+2271,+Ituzaing%C3%B3,+Buenos+Aires" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn" href="mailto:capillasanfranciscoituzaingo@gmail.com">Contacto</a>
+        <a class="btn secondary" href="https://www.facebook.com/people/Francisco-Capilla-Sfa/pfbid02mchKPSR5dKnLedguYAbx32kf9woMdqyP7ZZcJQktiwMBKzUfB9wQKzVLnkhpKMmCl/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const WORD_RSS = 'https://www.vaticannews.va/es/evangelio-de-hoy.rss.xml';
+    const PODCAST_RSS = 'https://www.vaticannews.va/es/podcast/comentario-del-evangelio.podcast.xml';
+    const WORD_FALLBACK = 'https://www.vaticannews.va/es/evangelio-de-hoy.html';
+    const PODCAST_FALLBACK = 'https://www.vaticannews.va/es/podcast/comentario-del-evangelio.html';
+    const statusEl = document.querySelector('.live-status');
+
+    function escapeHtml(text){
+      return String(text || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    }
+
+    function htmlToText(raw){
+      if(!raw) return '';
+      const doc = new DOMParser().parseFromString('<div>' + raw + '</div>', 'text/html');
+      return doc.body.textContent.replace(/\s+/g, ' ').trim();
+    }
+
+    function firstSentences(text, maxLength=320){
+      const clean = text.replace(/\s+/g, ' ').trim();
+      if(!clean) return '';
+      if(clean.length <= maxLength) return clean;
+      const slice = clean.slice(0, maxLength);
+      const lastDot = Math.max(slice.lastIndexOf('. '), slice.lastIndexOf('; '), slice.lastIndexOf(': '));
+      return (lastDot > 120 ? slice.slice(0, lastDot + 1) : slice + '…').trim();
+    }
+
+    function formatDate(raw){
+      if(!raw) return '';
+      const d = new Date(raw);
+      if(Number.isNaN(d.getTime())) return raw;
+      return d.toLocaleDateString('es-AR', { day:'2-digit', month:'2-digit', year:'numeric' });
+    }
+
+    function proxied(url){
+      return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url);
+    }
+
+    async function fetchFeedXml(feedUrl){
+      const res = await fetch(proxied(feedUrl), { cache:'no-store' });
+      if(!res.ok) throw new Error('proxy-xml');
+      const xmlText = await res.text();
+      const xml = new DOMParser().parseFromString(xmlText, 'application/xml');
+      if(xml.querySelector('parsererror')) throw new Error('xml-parse');
+      const item = xml.querySelector('item');
+      if(!item) throw new Error('xml-empty');
+      const enclosure = item.querySelector('enclosure');
+      return {
+        title: item.querySelector('title')?.textContent?.trim() || '',
+        link: item.querySelector('link')?.textContent?.trim() || '',
+        description: item.querySelector('description')?.textContent?.trim() || '',
+        pubDate: item.querySelector('pubDate')?.textContent?.trim() || '',
+        enclosureUrl: enclosure?.getAttribute('url') || ''
+      };
+    }
+
+    async function fetchFeedJson(feedUrl){
+      const url = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+      const res = await fetch(url, { cache:'no-store' });
+      if(!res.ok) throw new Error('rss2json');
+      const data = await res.json();
+      const item = data.items && data.items[0];
+      if(!item) throw new Error('rss2json-empty');
+      return {
+        title: item.title || '',
+        link: item.link || '',
+        description: item.description || item.content || '',
+        pubDate: item.pubDate || '',
+        enclosureUrl: (item.enclosure && (item.enclosure.link || item.enclosure.url)) || ''
+      };
+    }
+
+    async function fetchFeed(feedUrl){
+      try { return await fetchFeedXml(feedUrl); }
+      catch(e1){
+        try { return await fetchFeedJson(feedUrl); }
+        catch(e2){ throw e2; }
+      }
+    }
+
+    function renderReading(item){
+      const descriptionText = htmlToText(item.description).replace(/Read more\s*$/i, '').trim();
+      const extract = firstSentences(descriptionText, 340) || 'Visitá la fuente oficial para leer la publicación completa.';
+      const citation = /\(([^)]+\d[^)]*)\)/.exec(descriptionText)?.[1] || '';
+
+      document.getElementById('reading-title').textContent = item.title || 'Palabra del día';
+      document.getElementById('reading-link').href = item.link || WORD_FALLBACK;
+
+      const meta = [];
+      if(item.pubDate) meta.push('<span>' + escapeHtml(formatDate(item.pubDate)) + '</span>');
+      if(citation) meta.push('<span>' + escapeHtml(citation) + '</span>');
+      meta.push('<span>Actualización automática</span>');
+      document.getElementById('reading-meta').innerHTML = meta.join('');
+
+      document.getElementById('reading-body').textContent = descriptionText || 'No fue posible cargar el texto de hoy. Podés abrir la fuente oficial desde el botón.';
+      document.getElementById('reading-extract').textContent = extract;
+    }
+
+    function renderPodcast(item){
+      const descriptionText = htmlToText(item.description).replace(/Read more\s*$/i, '').trim();
+      const citation = /\(([^)]+\d[^)]*)\)/.exec(descriptionText)?.[1] || '';
+      document.getElementById('podcast-title').textContent = item.title || 'Comentario del Evangelio';
+      document.getElementById('podcast-link').href = item.link || PODCAST_FALLBACK;
+
+      const meta = [];
+      if(item.pubDate) meta.push('<span>' + escapeHtml(formatDate(item.pubDate)) + '</span>');
+      if(citation) meta.push('<span>' + escapeHtml(citation) + '</span>');
+      meta.push('<span>Audio oficial</span>');
+      document.getElementById('podcast-meta').innerHTML = meta.join('');
+      document.getElementById('podcast-desc').textContent = descriptionText || 'Abrí el comentario oficial para escuchar la reflexión completa del día.';
+
+      const audio = document.getElementById('podcast-audio');
+      if(item.enclosureUrl){
+        audio.src = item.enclosureUrl;
+        audio.hidden = false;
+      }
+    }
+
+    function setReadingFallback(msg){
+      document.getElementById('reading-title').textContent = 'Palabra del día';
+      document.getElementById('reading-meta').innerHTML = '<span>Fuente oficial</span>';
+      document.getElementById('reading-body').textContent = msg;
+      document.getElementById('reading-extract').textContent = 'Usá el botón “Abrir en Vatican News” para ver el contenido completo.';
+      document.getElementById('reading-link').href = WORD_FALLBACK;
+    }
+
+    function setPodcastFallback(msg){
+      document.getElementById('podcast-title').textContent = 'Comentario del Evangelio';
+      document.getElementById('podcast-meta').innerHTML = '<span>Fuente oficial</span>';
+      document.getElementById('podcast-desc').textContent = msg;
+      document.getElementById('podcast-link').href = PODCAST_FALLBACK;
+    }
+
+    (async function initDailyFeeds(){
+      let readingOk = false;
+      let podcastOk = false;
+
+      try {
+        const readingItem = await fetchFeed(WORD_RSS);
+        renderReading(readingItem);
+        readingOk = true;
+      } catch (err) {
+        setReadingFallback('No se pudo actualizar automáticamente la lectura del día en este momento.');
+      }
+
+      try {
+        const podcastItem = await fetchFeed(PODCAST_RSS);
+        renderPodcast(podcastItem);
+        podcastOk = true;
+      } catch (err) {
+        setPodcastFallback('No se pudo cargar automáticamente el audio en este momento.');
+      }
+
+      if(readingOk || podcastOk){
+        statusEl.innerHTML = '<span class="loading"><span class="spinner" style="display:none"></span>Contenido actualizado desde Vatican News</span>';
+      } else {
+        statusEl.innerHTML = '<span class="loading">Fuente oficial disponible mediante los botones de acceso</span>';
+      }
+    })();
+  </script>
+</body>
+</html>
