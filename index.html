@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capilla San Francisco de Asís | Ituzaingó</title>
+  <meta name="description" content="Capilla San Francisco de Asís, Ituzaingó. Horarios de misa, jubileo franciscano, catequesis, lecturas del día y recursos espirituales.">
+  <meta property="og:title" content="Capilla San Francisco de Asís">
+  <meta property="og:description" content="Comunidad de fe, oración y encuentro en Ituzaingó.">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --bg:#f4efe6;
+      --paper:#fffaf2;
+      --ink:#2f241c;
+      --muted:#6e5a49;
+      --line:#ead7be;
+      --brand:#6a2a17;
+      --brand-2:#9f6b2f;
+      --brand-3:#2f5834;
+      --soft:#f7ecde;
+      --white:#fff;
+      --shadow:0 20px 48px rgba(47,36,28,.10);
+      --radius:26px;
+      --radius-sm:18px;
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(159,107,47,.10), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(47,88,52,.09), transparent 26%),
+        var(--bg);
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(12px);
+      background:rgba(255,250,242,.9);
+      border-bottom:1px solid rgba(234,215,190,.9);
+    }
+    .topbar-inner{
+      max-width:var(--max);margin:0 auto;padding:12px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px;font-weight:800;
+    }
+    .brand-badge{
+      width:48px;height:48px;border-radius:16px;
+      display:grid;place-items:center;
+      color:#fff;background:linear-gradient(135deg,var(--brand),#a23d20);
+      box-shadow:var(--shadow);font-size:1.25rem;flex:0 0 auto;
+    }
+    .brand small{
+      display:block;color:var(--muted);font-weight:700;font-size:.82rem;
+    }
+    .nav{
+      display:flex;gap:10px;flex-wrap:wrap;
+    }
+    .nav a{
+      text-decoration:none;padding:10px 13px;border-radius:999px;
+      font-size:.92rem;font-weight:700;color:var(--muted);
+      border:1px solid transparent;
+      transition:.2s ease;
+    }
+    .nav a:hover{background:#fff;border-color:var(--line);color:var(--ink)}
+    .hero{padding:34px 0 14px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;
+    }
+    .card{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-main{padding:32px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      background:#fff3e6;border:1px solid #f0d6b9;
+      color:var(--brand);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.4px;
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size:clamp(2.1rem,3.4vw,3.8rem);
+      line-height:1.04;letter-spacing:-.03em;
+    }
+    .lead{margin:0 0 18px;color:var(--muted);font-size:1.08rem}
+    .quick{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0;
+    }
+    .quick div{
+      background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:15px;
+    }
+    .quick strong{display:block;color:var(--brand);margin-bottom:5px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      text-decoration:none;padding:13px 18px;border-radius:999px;
+      font-weight:800;border:1px solid var(--line);background:#fff;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(47,36,28,.08)}
+    .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+    .btn.secondary{background:#fff6ed}
+    .btn.green{background:var(--brand-3);border-color:var(--brand-3);color:#fff}
+    .hero-side{
+      padding:18px;display:grid;grid-template-rows:auto 1fr;gap:14px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,247,236,.96));
+    }
+    .saint-frame{
+      overflow:hidden;border-radius:24px;border:1px solid var(--line);
+      background:#efe7db;
+    }
+    .saint-frame img{
+      width:100%;aspect-ratio:1/1;object-fit:cover;
+    }
+    .saint-note{
+      border-radius:22px;padding:18px;border:1px solid var(--line);
+      background:var(--paper);
+    }
+    .saint-note h3{margin:0 0 8px;font-size:1.1rem}
+    .saint-note p{margin:0;color:var(--muted)}
+    section{padding:16px 0}
+    .section-head{
+      margin:10px 0 18px;display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    }
+    .section-head h2{
+      margin:0;font-size:clamp(1.6rem,2.4vw,2.5rem);line-height:1.08;
+    }
+    .section-head p{margin:0;color:var(--muted);max-width:760px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .info-card,.feature,.liturgy,.promo-body,.footer-box,.copy-block{padding:24px}
+    .info-card h3,.feature h3,.promo-body h3,.liturgy h3{margin:0 0 10px}
+    .info-card p,.feature p,.promo-body p,.liturgy p{margin:0;color:var(--muted)}
+    .pill{
+      display:inline-block;margin-top:14px;padding:7px 10px;border-radius:999px;
+      background:#f9eddc;color:var(--brand);font-size:.82rem;font-weight:800;
+    }
+    .notice{
+      padding:18px 20px;border-left:6px solid var(--brand-2);
+      background:#fff8eb;
+    }
+    .feature{
+      position:relative;overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.97), rgba(255,250,242,.97));
+    }
+    .feature::after{
+      content:"";position:absolute;right:-50px;top:-60px;width:190px;height:190px;border-radius:50%;
+      background:radial-gradient(circle, rgba(106,42,23,.09), transparent 62%);
+    }
+    .feature ul{margin:12px 0 0 20px;padding:0}
+    .feature li{margin:7px 0}
+    .promo{
+      overflow:hidden;
+      display:flex;flex-direction:column;
+    }
+    .promo img{
+      width:100%;aspect-ratio:16/11;object-fit:cover;background:#eee;
+    }
+    .promo-body{
+      flex:1;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .tag-row{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{
+      padding:8px 11px;border-radius:999px;border:1px solid var(--line);
+      background:#fff;font-size:.84rem;font-weight:800;color:var(--muted);
+    }
+    .hero-publication{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:18px;
+    }
+    .lit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+    .lit-card{
+      border:1px solid var(--line);border-radius:22px;background:#fffdf8;padding:18px;
+    }
+    .lit-label{
+      display:inline-flex;padding:7px 10px;border-radius:999px;background:#f8eee1;
+      color:var(--brand);font-size:.8rem;font-weight:800;margin-bottom:12px;
+    }
+    .lit-list{margin:0;padding-left:20px;color:var(--muted)}
+    .lit-list li{margin:8px 0}
+    .quote{
+      margin-top:16px;padding:18px;border-radius:18px;
+      border:1px dashed #d6c2a5;background:#fffdf9;color:var(--muted);font-style:italic;
+    }
+    .gallery{
+      display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;
+    }
+    .gallery-item{position:relative;overflow:hidden;border-radius:24px;min-height:240px}
+    .gallery-item img{width:100%;height:100%;object-fit:cover}
+    .gallery-item.large{min-height:560px}
+    .caption{
+      position:absolute;left:14px;right:14px;bottom:14px;
+      background:rgba(24,18,13,.72);color:#fff;padding:12px 14px;border-radius:15px;
+      font-size:.92rem;
+    }
+    .copy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .copy-block{
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,248,238,.96));
+    }
+    .copy-block h3{margin:0 0 10px}
+    .copy-block p{margin:0;color:var(--muted)}
+    .footer{padding:28px 0 44px;color:var(--muted)}
+    .footer-box{
+      display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    }
+    .footer strong{color:var(--ink)}
+    .tiny{font-size:.88rem}
+    @media (max-width:1020px){
+      .hero-grid,.grid-3,.grid-2,.hero-publication,.lit-grid,.gallery,.copy-grid{grid-template-columns:1fr}
+      .quick{grid-template-columns:1fr}
+      .gallery-item.large{min-height:340px}
+    }
+    @media (max-width:760px){
+      .topbar-inner{flex-direction:column;align-items:flex-start}
+      .hero-main,.hero-side,.info-card,.feature,.liturgy,.promo-body,.footer-box,.copy-block{padding:18px}
+      .nav a{padding:8px 10px;font-size:.86rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✝</div>
+        <div>
+          Capilla San Francisco de Asís
+          <small>Ituzaingó · Comunidad de fe, oración y encuentro</small>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#jubileo">Jubileo</a>
+        <a href="#lecturas">Lecturas del día</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#galeria">Galería</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="inicio">
+      <div class="hero-grid">
+        <article class="card hero-main">
+          <span class="eyebrow">Año Jubilar Franciscano · 2026</span>
+          <h1>Un lugar para rezar, peregrinar y volver al corazón.</h1>
+          <p class="lead">
+            La <strong>Capilla San Francisco de Asís</strong> abre sus puertas para la oración, la Santa Misa, la catequesis y el camino jubilar.
+            Queremos recibirte con espíritu franciscano: sencillez, paz, misericordia y alegría del Evangelio.
+          </p>
+
+          <div class="quick">
+            <div>
+              <strong>Santa Misa</strong>
+              Todos los sábados a las 19:00 hs.
+            </div>
+            <div>
+              <strong>Dirección</strong>
+              San Fernando 2271, Ituzaingó, Buenos Aires.
+            </div>
+            <div>
+              <strong>Contacto</strong>
+              capillasanfranciscoituzaingo@gmail.com
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=San+Fernando+2271,+Ituzaing%C3%B3,+Buenos+Aires" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn secondary" href="mailto:capillasanfranciscoituzaingo@gmail.com">Escribinos por email</a>
+            <a class="btn" href="#lecturas">Lecturas del día</a>
+          </div>
+        </article>
+
+        <aside class="card hero-side">
+          <div class="saint-frame">
+            <img src="assets/san_francisco_caricatura.jpg" alt="Ilustración de San Francisco de Asís con una paloma">
+          </div>
+          <div class="saint-note">
+            <h3>San Francisco nos sigue llamando</h3>
+            <p>
+              En este tiempo especial, la capilla quiere ser un espacio de encuentro con Dios, de reconciliación y de esperanza.
+              La peregrinación, la oración y la caridad concreta hacen visible el espíritu de San Francisco.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="card notice">
+        <strong>Dato importante:</strong> si Google Maps todavía marca mal el pin, compartí siempre la <strong>dirección escrita</strong>:
+        <strong>San Fernando 2271, Ituzaingó, Buenos Aires</strong>. El botón “Cómo llegar” usa la búsqueda por dirección.
+      </div>
+    </section>
+
+    <section id="jubileo">
+      <div class="section-head">
+        <h2>Jubileo franciscano 2026</h2>
+        <p>Contenido renovado para difusión parroquial, con un tono más solemne, claro y visualmente fuerte.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card feature">
+          <h3>800 años del tránsito de San Francisco</h3>
+          <p>
+            En 2026 la familia franciscana recuerda los <strong>800 años del tránsito de San Francisco de Asís</strong>:
+            no una despedida vacía, sino la memoria viva de un testigo del Evangelio que sigue guiando a la Iglesia
+            por el camino de la paz, la fraternidad, la humildad y el amor a toda la creación.
+          </p>
+          <ul>
+            <li>El tránsito recuerda una vida entregada a Cristo hasta el final.</li>
+            <li>La peregrinación es un llamado interior a la conversión.</li>
+            <li>La comunidad se prepara para orar, reconciliarse y servir.</li>
+          </ul>
+          <span class="pill">Espiritualidad franciscana</span>
+        </article>
+
+        <article class="card feature">
+          <h3>Catequesis sobre la indulgencia plenaria</h3>
+          <p>
+            La indulgencia plenaria se vive como <strong>don de misericordia</strong>, nunca como algo automático.
+            Se recibe con corazón dispuesto, en comunión con la Iglesia y con una decisión real de conversión.
+          </p>
+          <ul>
+            <li><strong>Confesión sacramental:</strong> abrir el alma al perdón de Dios.</li>
+            <li><strong>Comunión eucarística:</strong> unirse más profundamente a Cristo.</li>
+            <li><strong>Oración por las intenciones del Papa:</strong> vivir la fe en comunión eclesial.</li>
+            <li><strong>Peregrinación o visita piadosa:</strong> expresar la fe con pasos concretos.</li>
+          </ul>
+          <p class="tiny" style="margin-top:12px;">
+            Para la aplicación pastoral concreta en esta capilla, consultá siempre al párroco o al equipo responsable.
+          </p>
+          <span class="pill">Camino de gracia</span>
+        </article>
+      </div>
+
+      <div class="hero-publication" style="margin-top:18px;">
+        <article class="card promo">
+          <img src="assets/misa_jubilar_4_marzo.jpg" alt="Flyer de Santa Misa en honor a San Francisco de Asís">
+          <div class="promo-body">
+            <h3>Flyer destacado · Santa Misa en honor a San Francisco</h3>
+            <p>
+              Este flyer queda integrado como pieza principal de difusión: muestra la <strong>charla introductoria al Año Jubilar Franciscano a las 18 hs</strong>
+              y la <strong>Santa Misa a las 19 hs</strong>, con la dirección de la capilla visible para compartir por WhatsApp o redes.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Difusión inmediata</span>
+              <span class="tag">Jubileo 2026</span>
+              <span class="tag">Peregrinación</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card feature">
+          <h3>Texto publicitario sugerido</h3>
+          <p>
+            <strong>Capilla San Francisco de Asís – Ituzaingó</strong><br>
+            En este Año Jubilar Franciscano te invitamos a acercarte a nuestra capilla para rezar, peregrinar y renovar el corazón.
+            Vivamos juntos el camino de la fe, la reconciliación y la esperanza en el marco de los 800 años del tránsito de San Francisco.
+          </p>
+          <ul>
+            <li><strong>Santa Misa:</strong> todos los sábados a las 19 hs.</li>
+            <li><strong>Dirección:</strong> San Fernando 2271, Ituzaingó.</li>
+            <li><strong>Invitación:</strong> acercate con tu familia a vivir este tiempo de gracia.</li>
+          </ul>
+          <span class="pill">Listo para copiar</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="lecturas">
+      <div class="section-head">
+        <h2>Lecturas del día y audio</h2>
+        <p>Dejé esta sección más fuerte y útil: acceso directo al texto largo oficial, al comentario del Evangelio y a recursos diarios de oración.</p>
+      </div>
+
+      <div class="lit-grid">
+        <article class="card liturgy">
+          <span class="lit-label">Acceso completo</span>
+          <h3>Palabra del día en formato largo</h3>
+          <p>
+            Como esta web está publicada en <strong>GitHub Pages</strong> (sitio estático), la forma más estable y profesional es llevar a la comunidad
+            al contenido oficial que se actualiza todos los días. Acá el acceso queda claro, visible y ordenado.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank" rel="noopener">Abrir lectura completa</a>
+            <a class="btn green" href="https://www.vaticannews.va/es/podcast/comentario-del-evangelio.html" target="_blank" rel="noopener">Escuchar comentario del Evangelio</a>
+            <a class="btn" href="https://www.vaticannews.va/es/santos.html" target="_blank" rel="noopener">Santo del día</a>
+          </div>
+          <div class="quote">
+            “Señor, haceme instrumento de tu paz; que donde haya odio, ponga amor; donde haya herida, ponga perdón; donde haya tristeza, ponga esperanza.”
+          </div>
+        </article>
+
+        <article class="card liturgy">
+          <span class="lit-label">Qué encuentra la comunidad</span>
+          <h3>Lectura larga + referencia bíblica + audio</h3>
+          <ul class="lit-list">
+            <li><strong>Palabra del día:</strong> acceso al contenido diario de Vatican News.</li>
+            <li><strong>Comentario del Evangelio:</strong> episodio con reproductor de audio y referencia bíblica visible.</li>
+            <li><strong>Uso pastoral simple:</strong> una sola sección para leer, escuchar y compartir.</li>
+          </ul>
+          <div class="actions" style="margin-top:16px;">
+            <a class="btn secondary" href="https://www.vaticannews.va/es/evangelio-de-hoy.rss.xml" target="_blank" rel="noopener">RSS oficial</a>
+          </div>
+          <p class="tiny" style="margin-top:16px;">
+            Consejo práctico: si más adelante querés, en una siguiente versión se puede agregar una automatización externa para traer un extracto diario,
+            pero esta base ya queda prolija y estable.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publicaciones">
+      <div class="section-head">
+        <h2>Publicaciones especiales</h2>
+        <p>Quedaron listas para verse bien, con fotos reales, flyers visibles y textos que podés reutilizar en web o WhatsApp.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card promo">
+          <img src="assets/catequesis_2026.jpg" alt="Flyer de catequesis de iniciación cristiana 2026">
+          <div class="promo-body">
+            <h3>Catequesis 2026</h3>
+            <p>
+              El flyer quedó integrado como publicación importante: <strong>Catequesis de iniciación cristiana</strong>, con la propuesta
+              “Con Cristo construyo mi vida”, inscripción 2026 y horarios visibles para consulta rápida.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Niños y familias</span>
+              <span class="tag">Difusión parroquial</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card promo">
+          <img src="assets/francisco_800_asis.jpg" alt="Imagen de referencia sobre el octavo centenario franciscano">
+          <div class="promo-body">
+            <h3>Imagen temática · Centenario franciscano</h3>
+            <p>
+              Esta imagen acompaña el bloque del jubileo como recurso visual sobrio y solemne para reforzar el mensaje del
+              <strong>octavo centenario del tránsito de San Francisco</strong>.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Contenido inspirador</span>
+              <span class="tag">Año jubilar</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card promo">
+          <img src="assets/san_francisco_caricatura.jpg" alt="Ilustración de San Francisco de Asís">
+          <div class="promo-body">
+            <h3>San Francisco · imagen principal</h3>
+            <p>
+              La caricatura de San Francisco pasa a ser una imagen protagonista del sitio. Sirve para dar identidad,
+              cercanía y una estética más cálida a toda la página.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Identidad visual</span>
+              <span class="tag">Imagen principal</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="section-head">
+        <h2>Galería de la capilla</h2>
+        <p>Ahora sí con imágenes bien visibles y mejor presentadas.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="card gallery-item large" style="margin:0;">
+          <img src="assets/altar_capilla.jpg" alt="Vista del altar de la Capilla San Francisco de Asís">
+          <figcaption class="caption">Vista del altar de la capilla, una imagen cálida para presentar el lugar de oración.</figcaption>
+        </figure>
+
+        <figure class="card gallery-item" style="margin:0;">
+          <img src="assets/misa_jubilar_4_marzo.jpg" alt="Flyer de Santa Misa en honor a San Francisco">
+          <figcaption class="caption">Flyer de la Misa jubilar con charla introductoria y dirección visible.</figcaption>
+        </figure>
+
+        <figure class="card gallery-item" style="margin:0;">
+          <img src="assets/catequesis_2026.jpg" alt="Flyer de catequesis 2026">
+          <figcaption class="caption">Convocatoria de catequesis 2026 para compartir en la comunidad.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Textos listos para compartir</h2>
+        <p>Dos bloques listos para copiar y pegar.</p>
+      </div>
+
+      <div class="copy-grid">
+        <article class="card copy-block">
+          <h3>Texto corto para WhatsApp</h3>
+          <p>
+            <strong>Capilla San Francisco de Asís – Ituzaingó</strong><br><br>
+            Te esperamos para compartir la fe, la oración y la Santa Misa.<br>
+            <strong>Misa:</strong> todos los sábados a las 19 hs.<br>
+            <strong>Dirección:</strong> San Fernando 2271, Ituzaingó.<br><br>
+            En este Año Jubilar Franciscano te invitamos a peregrinar con espíritu de paz, humildad y esperanza.
+          </p>
+        </article>
+
+        <article class="card copy-block">
+          <h3>Texto para publicación especial</h3>
+          <p>
+            En el marco de los <strong>800 años del tránsito de San Francisco de Asís</strong>, nuestra comunidad quiere vivir un tiempo de oración,
+            reconciliación y encuentro. Acercate a la <strong>Capilla San Francisco de Asís</strong> para compartir la Palabra, la celebración y el camino jubilar.
+            La fe también se hace visible en cada peregrinación, en cada gesto de caridad y en cada corazón que vuelve a Dios.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <div class="card footer-box">
+      <div>
+        <strong>Capilla San Francisco de Asís</strong><br>
+        San Fernando 2271 · Ituzaingó · Buenos Aires
+      </div>
+      <div class="actions" style="margin-top:0;">
+        <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=San+Fernando+2271,+Ituzaing%C3%B3,+Buenos+Aires" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn" href="mailto:capillasanfranciscoituzaingo@gmail.com">Contacto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
