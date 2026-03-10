@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Indulgencias Jubilares · Capilla San Francisco de Asís</title>
+  <meta name="description" content="Información para peregrinos y comunidad. Capilla San Francisco de Asís, Ituzaingó." />
+  <style>
+    :root{
+      --bg:#0b1111;
+      --card:#0f1a1a;
+      --text:#e8f2f0;
+      --muted:#b8c8c5;
+      --line:rgba(255,255,255,.12);
+      --accent:#c7a66b;
+      --accent2:#76d1c8;
+      --shadow:0 14px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --wrap:1060px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1100px 700px at 20% -10%, rgba(118,209,200,.18), transparent 60%),
+                  radial-gradient(900px 600px at 90% 0%, rgba(199,166,107,.16), transparent 55%),
+                  linear-gradient(180deg, #070c0c, #0b1111 40%, #060b0b);
+    }
+    a{color:inherit}
+    .top{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(8,12,12,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .top-inner{
+      max-width:var(--wrap);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:0}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(118,209,200,.22), rgba(199,166,107,.22));
+      border:1px solid var(--line);
+      display:grid; place-items:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .logo img{width:44px; height:44px; object-fit:cover; transform:translateY(2px)}
+    .brand h1{margin:0; font-size:14px; letter-spacing:.3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .brand p{margin:0; font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .nav a{
+      text-decoration:none;
+      font-size:13px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.04);
+    }
+    .nav a:hover{border-color:rgba(199,166,107,.55)}
+    .wrap{max-width:var(--wrap); margin:0 auto; padding:22px 18px 40px}
+    .hero{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      overflow:hidden;
+    }
+    .kicker{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:13px}
+    .kicker .dot{width:8px; height:8px; border-radius:99px; background:var(--accent2); box-shadow:0 0 0 6px rgba(118,209,200,.10)}
+    .hero h2{margin:10px 0 6px; font-size:26px; line-height:1.15}
+    .hero .sub{margin:0; color:var(--muted); line-height:1.55}
+    .cta{
+      margin-top:14px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      font-weight:600;
+      font-size:13px;
+    }
+    .btn.primary{
+      border-color: rgba(199,166,107,.55);
+      background: linear-gradient(135deg, rgba(199,166,107,.22), rgba(118,209,200,.12));
+    }
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.6fr .9fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-h{padding:14px 16px; border-bottom:1px solid var(--line)}
+    .card-h h3{margin:0; font-size:16px}
+    .card-h p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.5}
+    .card-b{padding:14px 16px}
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+    }
+    .meta strong{color:var(--text)}
+    .pdf-pages{
+      display:grid;
+      gap:14px;
+    }
+    .page{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+    .page img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:#0a0f0f;
+    }
+    .page a{display:block}
+    footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+      opacity:.95;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="assets/san_francisco_caricatura.jpg" alt="">
+        </div>
+        <div style="min-width:0">
+          <h1>Capilla San Francisco de Asís</h1>
+          <p>San Fernando 2271 · Ituzaingó, Buenos Aires</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Navegación">
+        <a href="./">Inicio</a>
+        <a href="#documento">Ver documento</a>
+        <a href="assets/indulgencias_original.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span><span>Jubileo franciscano · Peregrinación</span></div>
+      <h2>Indulgencias jubilares</h2>
+      <p class="sub">
+        A continuación se presenta el documento en <strong>imágenes</strong> (idéntico al original) para facilitar la lectura desde cualquier dispositivo.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#documento">Ver documento</a>
+        <a class="btn" href="assets/indulgencias_original.pdf" target="_blank" rel="noopener">Descargar PDF</a>
+      </div>
+    </section>
+
+    <section class="grid" id="documento" style="scroll-margin-top:90px">
+      <article class="card">
+        <div class="card-h">
+          <h3>Documento completo</h3>
+          <p>Tocá una página para verla en grande.</p>
+        </div>
+        <div class="card-b">
+          <div class="pdf-pages">
+            <div class="page">
+              <a href="assets/indulgencias_p01.png" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/indulgencias_p01.png" alt="Documento - página 1">
+              </a>
+            </div>
+            <div class="page">
+              <a href="assets/indulgencias_p02.png" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/indulgencias_p02.png" alt="Documento - página 2">
+              </a>
+            </div>
+            <div class="page">
+              <a href="assets/indulgencias_p03.png" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/indulgencias_p03.png" alt="Documento - página 3">
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card">
+        <div class="card-h">
+          <h3>Acceso rápido</h3>
+          <p>Escaneá el QR para abrir esta página directamente.</p>
+        </div>
+        <div class="card-b">
+          <div style="display:grid; place-items:center; gap:12px">
+            <img src="assets/qr_indulgencias.png" alt="QR de acceso a la página" style="width:220px; height:220px; border-radius:16px; border:1px solid rgba(255,255,255,.12); background:#fff; padding:10px;">
+            <div class="meta">
+              <div><strong>Misa:</strong> Sábados 19:00 hs</div>
+              <div><strong>Dirección:</strong> San Fernando 2271, Ituzaingó</div>
+              <div><strong>Facebook:</strong> <a href="https://www.facebook.com/people/Francisco-Capilla-Sfa/pfbid02mchKPSR5dKnLedguYAbx32kf9woMdqyP7ZZcJQktiwMBKzUfB9wQKzVLnkhpKMmCl/" target="_blank" rel="noopener">Capilla San Francisco</a></div>
+            </div>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=San%20Fernando%202271%20Ituzaing%C3%B3%20Buenos%20Aires" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      Capilla San Francisco de Asís · Ituzaingó · Buenos Aires
+    </footer>
+  </main>
+</body>
+</html>
